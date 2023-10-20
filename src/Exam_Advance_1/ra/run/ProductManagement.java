@@ -81,8 +81,8 @@ public class ProductManagement {
             Product product=new Product();
             product.inputData();
             products.add(product);
-            System.out.println("Thêm mới sản phẩm thành công");
         }
+        System.out.println("Thêm mới sản phẩm thành công");
     }
 
     private static void addNewCatalog() {
@@ -92,7 +92,7 @@ public class ProductManagement {
             Catalog catalog=new Catalog();
             catalog.inputData();
             catalogs.add(catalog);
-            System.out.println("Thêm mới danh mục thành công.");
         }
+        System.out.println("Thêm mới danh mục thành công.");
     }
 }

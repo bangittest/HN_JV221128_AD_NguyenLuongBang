@@ -110,19 +110,18 @@ public class Product implements IShop {
             System.out.println(i + 1 + ". " + ProductManagement.catalogs.get(i).getCatalogName());
         }
 
-        Catalog selectedCatalog = null;
-        while (selectedCatalog == null) {
+        while (this.catalog == null) {
             System.out.println("Mời bạn nhập số của danh mục hoặc nhập 0 để tạo danh mục mới: ");
             int choice = Integer.parseInt(scanner.nextLine());
 
             if (choice >= 1 && choice <= ProductManagement.catalogs.size()) {
-                selectedCatalog = ProductManagement.catalogs.get(choice - 1);
+                this.catalog = ProductManagement.catalogs.get(choice - 1);
             } else if (choice == 0) {
                 System.out.println("Tạo danh mục mới:");
                 Catalog newCatalog = new Catalog();
                 newCatalog.inputData();
                 ProductManagement.catalogs.add(newCatalog);
-                selectedCatalog = newCatalog;
+                this.catalog = newCatalog;
             } else {
                 System.out.println("Lựa chọn không hợp lệ. Vui lòng chọn một danh mục hợp lệ hoặc nhập 0 để tạo danh mục mới.");
             }
@@ -147,4 +146,5 @@ public class Product implements IShop {
         System.out.println("Giá xuất :" +exportPrice);
         System.out.println("Trạng thái : "+productStatus);
     }
+
 }
